@@ -1,0 +1,44 @@
+.transaction-register {
+    padding: 1.5% 3%;
+    padding-bottom: 3%;
+    border: 1px solid #929292;
+    border-radius: 20px;
+    background-color: #f1f1f1;
+    width: 100%;
+}
+
+.register-list {
+    list-style-type: none; 
+    margin: 0;
+    padding: 0 10px 0 0;
+    margin-bottom: 3%;
+}
+
+.register-list-item {
+    display: grid;
+    grid-template-columns: 35% 30% 25% 10%;
+    word-wrap: break-word;
+    border: 1px solid #929292;
+    padding: 0px 15px;
+}
+
+.register-item {
+    display: grid;
+    grid-template-columns: 35% 30% 25% 10%;
+    word-wrap: break-word;
+    border: 1px solid #929292;
+    padding: 0px 15px;
+    background-color: #ffffff;
+}
+
+.register-item-image {
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+
+@media only screen and (max-width: 700px) {
+    .transaction-register {
+        width: 100%;
+    }
+}
