@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import '../css/TransactionForm.css'
-import TransactionHistory from './TransactionHistory' 
 
 const TransactionForm = ({handleAdd}) => {
 
     const [ title, setTitle ] = useState("")
     const [ amount, setAmount ] = useState("")
-    const [ type, setType ] = useState("expense") 
+    const [ type, setType ] = useState("expense")
 
-    const handleSubmit = (event) => {
+
+    const handleSubmit = async (event) => {
         handleAdd(title,amount,type)
         setTitle("")
         setAmount("")
