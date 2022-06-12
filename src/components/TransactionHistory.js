@@ -6,9 +6,9 @@ const TransactionHistory = (props) => {
 
     const [ transactionData, setTransactionData ] = useState(props.data.transactionData)
 
-    const handleClick = (event, data) => {
-        setTransactionData(transactionData.filter(item => item !== data))
+    const handleClick = async (event, data) => {
         props.handleDelete(data)
+        console.log(transactionData)
     }
 
     return (
@@ -21,10 +21,7 @@ const TransactionHistory = (props) => {
                     <h4>Type</h4>
                     <h4> </h4>
                 </li>
-                {!(transactionData.length===1 && 
-                    transactionData[0].title==="" && 
-                    transactionData[0].amount==="" && 
-                    transactionData[0].type==="") && 
+                {
                     transactionData.map(data => (
                     <div className="register-item">
                         <p>{data.title}</p>

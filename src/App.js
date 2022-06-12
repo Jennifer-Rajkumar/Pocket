@@ -10,23 +10,15 @@ const App = () => {
   const [ balance, setBalance ] = useState(0)
   const [ income, setIncome ] = useState(0)
   const [ expenses, setExpenses ] = useState(0)
-  const [ transactionData, setTransactionData ] = useState([{title:"", amount:"", type:""}])
+  const [ transactionData, setTransactionData ] = useState([])
 
-  const handleAdd = (data1, data2, data3) => {
-    if(transactionData.length===1 && transactionData[0].title==="" && transactionData[0].amount==="" && transactionData[0].type==="") {
-      transactionData[0] = {
-          title: data1,
-          amount: data2,
-          type: data3
-      }
-    }
-    else {
-      transactionData.push({
-          title: data1,
-          amount: data2,
-          type: data3
-      })
-    } 
+  const handleAdd = async (data1, data2, data3) => {
+
+    const newList = { title: data1, amount: data2, type: data3 }
+
+    transactionData.push(newList)
+    console.log(transactionData)
+
     if(data3==="expense") {
       setBalance(balance-parseInt(data2))
       setExpenses(expenses+parseInt(data2))
@@ -37,7 +29,8 @@ const App = () => {
     }
   };
 
-  const handleDelete = (data) => {
+  const handleDelete = async (data) => {
+    transactionData.splice(transactionData.indexOf(data),1)
     if(data.type === "expense") {
       setBalance(balance+parseInt(data.amount))
       setExpenses(expenses-parseInt(data.amount))
@@ -46,6 +39,10 @@ const App = () => {
       setBalance(balance-parseInt(data.amount))
       setIncome(income-parseInt(data.amount))
     }
+    if(transactionData.length === 0)
+      setTransactionData([])
+    else 
+      setTransactionData(transactionData)
   }
 
   return (
