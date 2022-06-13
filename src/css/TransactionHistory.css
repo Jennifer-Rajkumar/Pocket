@@ -27,6 +27,7 @@
     grid-template-columns: 35% 30% 25% 10%;
     word-wrap: break-word;
     border: 1px solid #929292;
+    border-top: none;
     padding: 0px 15px;
     background-color: #ffffff;
 }
