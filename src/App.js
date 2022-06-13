@@ -39,10 +39,6 @@ const App = () => {
       setBalance(balance-parseInt(data.amount))
       setIncome(income-parseInt(data.amount))
     }
-    if(transactionData.length === 0)
-      setTransactionData([])
-    else 
-      setTransactionData(transactionData)
   }
 
   return (
